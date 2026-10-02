@@ -2,13 +2,13 @@
 
 ### Systems Engineer · Independent Researcher
 
-I design and build reliability-focused systems across **agentic AI, distributed systems, databases, transactional platforms, runtime assurance, and verifiable infrastructure**.
+I build **reliability-focused software for agentic AI, distributed systems, databases, transactional platforms, and verifiable infrastructure**.
 
-A recurring question connects much of my work:
+My work is organized around one recurring question:
 
 > **How do we make increasingly autonomous software remain correct, auditable, recoverable, and controllable across multi-step execution?**
 
-My projects explore this problem from several directions: agent execution contracts, runtime policy enforcement, distributed databases, deterministic transaction processing, cryptographic evidence systems, symbolic verification, recovery semantics, and high-assurance infrastructure.
+I explore that problem through runtime assurance, explicit state transitions, invariant enforcement, deterministic execution, cryptographic evidence, recovery semantics, and systems that separate **model capability** from **execution authority**.
 
 ---
 
@@ -16,358 +16,151 @@ My projects explore this problem from several directions: agent execution contra
 
 ### AARC — A Machine-Verifiable Audit and Reliability Contract for Tool-Using AI Agents
 
-AARC defines a machine-verifiable execution contract for tool-using AI agents based on externally observable runtime evidence rather than hidden chain-of-thought.
+AARC specifies a machine-verifiable execution contract for tool-using AI agents using **externally observable runtime evidence rather than hidden chain-of-thought**.
 
-It focuses on:
+It focuses on execution ordering, immutable intent anchors, tool authorization, separated approval identities, state verification, trace integrity, and change provenance.
 
-- execution ordering
-- immutable intent anchors
-- tool authorization
-- separated approval identities
-- state and transition verification
-- change provenance
-- trace integrity
-- fail-closed runtime verification
-
-**Publication:** [Zenodo — AARC](https://doi.org/10.5281/zenodo.23107336)  
-**DOI:** [`10.5281/zenodo.23107336`](https://doi.org/10.5281/zenodo.23107336)  
-**ORCID:** [`0009-0002-1699-2043`](https://orcid.org/0009-0002-1699-2043)  
-**Repository:** [Agentic Audit & Reliability Contract](https://github.com/SaridakisStamatisChristos/Agentic-Audit-Reliability-Contract-AARC-)
+- **Publication:** [Zenodo — AARC](https://doi.org/10.5281/zenodo.23107336)
+- **DOI:** [10.5281/zenodo.23107336](https://doi.org/10.5281/zenodo.23107336)
+- **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
+- **Repository:** [Agentic Audit & Reliability Contract](https://github.com/SaridakisStamatisChristos/Agentic-Audit-Reliability-Contract-AARC-)
 
 ---
 
 ## 🧭 Current Focus
 
-My current work is concentrated around the boundary between **model capability and execution correctness**.
+A capable model does not automatically produce a reliable autonomous system.
 
-A powerful model can still produce an unreliable autonomous system if the surrounding execution environment permits:
+The surrounding runtime must still determine:
 
-- invalid state transitions
-- unauthorized tool calls
-- duplicated side effects
-- broken causal ordering
-- unverifiable decisions
-- silent policy violations
-- unsafe retries
-- corrupted recovery
-- untraceable changes
+1. whether an action is authorized,
+2. whether required invariants still hold,
+3. whether execution is safe,
+4. whether the resulting state can be verified,
+5. and how the system should recover if execution partially fails.
 
-I am particularly interested in architectures where autonomous systems operate through explicit execution contracts, verifiable traces, deterministic transitions, runtime policy enforcement, and recoverable state.
+That boundary between **intelligence and execution correctness** is the central theme connecting much of my current engineering and research.
 
 ---
 
-# Selected Engineering Work
+## 🚀 Selected Engineering Work
 
-## 🛡️ AegisRun / AEGIS
+### 🛡️ [AegisRun / AEGIS](https://github.com/SaridakisStamatisChristos/AEGIS)
 
 **Policy-enforced control plane for AI-agent tool execution.**
 
-[View repository →](https://github.com/SaridakisStamatisChristos/AEGIS)
+AegisRun places an enforcement layer between autonomous agents and the tools they invoke, combining policy-as-code, approvals, execution budgets, redaction, tamper-evident evidence, offline verification, OIDC/RBAC, observability, and operational controls.
 
-AegisRun places an enforcement layer between autonomous agents and the tools they invoke.
-
-It combines:
-
-- policy-as-code
-- runtime execution budgets
-- approval workflows
-- tool authorization
-- redaction
-- tamper-evident evidence
-- offline verification
-- OIDC / RBAC
-- tenant isolation
-- observability
-- backup and recovery
-- Kubernetes-oriented deployment
-- software-supply-chain evidence
-
-The central design principle is that agent capability should not imply unrestricted execution authority.
+**Core idea:** agent capability should never imply unrestricted execution authority.
 
 ---
 
-## ✈️ CharterOS
+### ✈️ [CharterOS](https://github.com/SaridakisStamatisChristos/CharterOS)
 
 **Deterministic transaction, procurement, operations, optimization, and evidence platform for B2B aviation charter.**
 
-[View repository →](https://github.com/SaridakisStamatisChristos/CharterOS)
+CharterOS models the charter lifecycle across sourcing, RFQs, quotes, tenders, award, booking, contracts, operations, disruption handling, reconciliation, and audit evidence.
 
-CharterOS models the charter lifecycle from mission creation and supplier sourcing through RFQs, quotes, tenders, award, booking, contracts, operations, disruption handling, financial reconciliation, and audit evidence.
-
-The architecture emphasizes:
-
-- PostgreSQL as canonical transactional authority
-- deterministic state transitions
-- bitemporal state
-- immutable commercial lineage
-- explicit authority boundaries
-- transactional outbox patterns
-- deterministic optimization
-- auditable FX evidence
-- graph projections
-- no-hindsight historical semantics
-- disaster recovery
-- release provenance
-- evidence reconstruction
-
-The project explores how complex commercial workflows can remain explainable and auditable even under concurrency, retries, historical corrections, and automation.
+The architecture emphasizes PostgreSQL as canonical authority, bitemporal state, immutable commercial lineage, deterministic optimization, transactional outboxes, auditable FX, no-hindsight semantics, explicit authority boundaries, recovery, and release provenance.
 
 ---
 
-## 🗄️ NeuralBase
+### 🗄️ [NeuralBase](https://github.com/SaridakisStamatisChristos/Neuralbase)
 
 **Experimental distributed SQL engine written in Rust.**
 
-[View repository →](https://github.com/SaridakisStamatisChristos/Neuralbase)
+NeuralBase combines PostgreSQL wire compatibility, MVCC, RocksDB persistence, Raft-replicated mutations, hybrid logical clocks, vectorized execution, replicated identity state, snapshots, backup/restore, recovery semantics, explicit read-consistency modes, and reproducible performance characterization.
 
-NeuralBase explores the architecture of an AI-aware distributed database while retaining explicit correctness boundaries.
-
-Implemented areas include:
-
-- PostgreSQL wire protocol
-- MVCC
-- RocksDB persistence
-- Raft-replicated mutations
-- hybrid logical clocks
-- vectorized execution
-- SQL parsing and binding
-- replicated identity state
-- SCRAM authentication
-- distributed membership management
-- snapshots
-- backup and restore
-- exact committed-index recovery
-- read-consistency modes
-- compatibility testing
-- reproducible performance characterization
-
-The project treats distributed correctness, durability, recovery, and evidence as first-class system properties.
+**Core idea:** distributed correctness, durability, and recovery are first-class system properties rather than operational afterthoughts.
 
 ---
 
-## 🌳 Merkle Evidence Vault
+### 🌳 [Merkle Evidence Vault](https://github.com/SaridakisStamatisChristos/merkle-evidence-vault)
 
 **Tamper-evident infrastructure for append-only evidence storage and offline verification.**
 
-[View repository →](https://github.com/SaridakisStamatisChristos/merkle-evidence-vault)
+The system uses RFC 6962 Merkle trees, Ed25519-signed checkpoints, append-only storage, offline-verifiable evidence bundles, authentication controls, recovery drills, fuzzing, CI verification, and release-governance evidence.
 
-The system combines:
-
-- RFC 6962 Merkle trees
-- Ed25519-signed checkpoints
-- append-only evidence storage
-- offline-verifiable evidence bundles
-- authentication and authorization controls
-- backup / restore drills
-- adversarial fuzzing
-- CI verification
-- release governance
-- reproducible evidence packaging
-
-The broader goal is to make important system claims independently verifiable rather than dependent on trust in the originating service.
+**Core idea:** important system claims should be independently verifiable rather than dependent on trust in the originating service.
 
 ---
 
-## ∑ Math Sentinel
+### ∑ [Math Sentinel](https://github.com/SaridakisStamatisChristos/math-sentinel)
 
 **Stateful symbolic proof-agent research scaffold.**
 
-[View repository →](https://github.com/SaridakisStamatisChristos/math-sentinel)
-
-Math Sentinel explores reasoning systems where the authoritative object is an explicit **proof state**, rather than unrestricted generated text.
-
-The architecture includes:
-
-- explicit proof state
-- typed reasoning actions
-- deterministic mathematical tools
-- prover / verifier separation
-- verifier-guided beam search
-- replay memory
-- hard-case tracking
-- persistent lemma memory
-- procedural mathematical curricula
-
-This project explores how generated reasoning can be constrained and evaluated through explicit machine-checkable state transitions.
+Math Sentinel explores reasoning systems where the authoritative object is an explicit **proof state**, not unrestricted generated text. It combines typed actions, deterministic mathematical tools, prover/verifier separation, verifier-guided search, replay, hard-case tracking, and persistent lemma memory.
 
 ---
 
-## 🤖 StamCont
+### 🤖 [StamCont](https://github.com/SaridakisStamatisChristos/StamCont)
 
 **Durable, provider-neutral coding-agent runtime.**
 
-[View repository →](https://github.com/SaridakisStamatisChristos/StamCont)
+StamCont focuses on long-running agent execution: durable sessions, deterministic replay, interruption-safe resume, capability-scoped execution, cross-platform sandboxing, context compaction, nested-agent authority, cancellation propagation, and shared CLI/IDE runtime semantics.
 
-StamCont focuses on the infrastructure required for long-running coding agents:
-
-- durable sessions
-- deterministic replay
-- interruption-safe resume
-- capability-scoped execution
-- explicit execution profiles
-- cross-platform sandboxing
-- context compaction
-- nested-agent authority
-- cancellation propagation
-- provider-neutral runtime events
-- shared CLI / IDE semantics
-
-The project originated from an imported Continue source baseline and retains the appropriate upstream attribution while developing a distinct durable agent-runtime architecture.
+StamCont originated from an imported Continue source baseline and retains the appropriate upstream attribution while developing a distinct durable agent-runtime architecture.
 
 ---
 
-# Research & Engineering Interests
+## 🔬 Research & Engineering Interests
 
-### Agentic Systems
+**Agentic systems**  
+Runtime assurance · tool-using AI · autonomous execution · agent control planes · execution traces · approval systems · state-transition verification · runtime policy enforcement
 
-- agent runtime assurance
-- tool-using AI
-- autonomous execution
-- agent control planes
-- execution traces
-- approval systems
-- state-transition verification
-- multi-agent architectures
-- runtime policy enforcement
+**Distributed systems**  
+Consensus · replication · distributed databases · transaction processing · MVCC · durability · recovery · event-driven systems · distributed state machines
 
-### Distributed Systems
+**Reliability & verification**  
+Invariant enforcement · deterministic execution · runtime verification · auditability · provenance · reproducibility · fail-closed architecture · cryptographic evidence · disaster recovery
 
-- consensus
-- replication
-- distributed databases
-- transaction processing
-- MVCC
-- durability
-- recovery
-- event-driven systems
-- distributed state machines
+**AI reasoning systems**  
+Verifier-guided reasoning · symbolic reasoning · proof-state architectures · tool-augmented models · model/runtime separation
 
-### Reliability & Verification
-
-- invariant enforcement
-- deterministic execution
-- runtime verification
-- auditability
-- provenance
-- reproducibility
-- fail-closed architectures
-- cryptographic evidence
-- disaster recovery
-
-### AI Reasoning Systems
-
-- verifier-guided reasoning
-- symbolic reasoning
-- proof-state architectures
-- tool-augmented models
-- execution correctness
-- model / runtime separation
-
-### Optimization & Systems Engineering
-
-- deterministic optimization
-- high-performance computation
-- data structures
-- algorithm design
-- workflow orchestration
-- performance engineering
+**Optimization & systems engineering**  
+Deterministic optimization · high-performance computation · data structures · algorithm design · workflow orchestration · performance engineering
 
 ---
 
-# Engineering Principles
+## 🧱 Engineering Principles
 
-Much of my work is built around a small number of recurring principles.
-
-### Explicit state over implicit behavior
-
-Important transitions should be represented explicitly and validated rather than inferred from loosely structured execution.
-
-### Invariants over assumptions
-
-Critical correctness properties should be encoded and continuously checked.
-
-### Evidence over claims
-
-Where possible, important assertions should be backed by tests, traces, benchmarks, cryptographic commitments, or reproducible artifacts.
-
-### Determinism where it matters
-
-Critical financial, transactional, authorization, and recovery paths should minimize hidden nondeterminism.
-
-### Fail closed
-
-When authority, state, evidence, or verification is incomplete, critical execution should not silently continue.
-
-### Recovery is part of correctness
-
-A system that behaves correctly during normal execution but cannot safely recover from interruption or partial failure is incomplete.
-
-### Model intelligence ≠ execution reliability
-
-An intelligent model can propose useful actions.
-
-A reliable system must additionally determine:
-
-1. whether the action is authorized,
-2. whether the required invariants still hold,
-3. whether execution is safe,
-4. whether the resulting state can be verified,
-5. and what should happen if execution partially fails.
+- **Explicit state over implicit behavior** — important transitions should be represented and validated directly.
+- **Invariants over assumptions** — critical correctness properties should be encoded and continuously checked.
+- **Evidence over claims** — tests, traces, benchmarks, cryptographic commitments, and reproducible artifacts should support important assertions.
+- **Determinism where it matters** — critical transactional, financial, authorization, and recovery paths should minimize hidden nondeterminism.
+- **Fail closed** — incomplete authority, state, or verification should not silently become permission to continue.
+- **Recovery is part of correctness** — safe resume, rollback, replay, and partial-failure handling belong in the core design.
+- **Model intelligence ≠ execution reliability** — intelligent proposals still require controlled, verifiable execution.
 
 ---
 
-# Technology
+## 🛠️ Technology
 
-**Languages**
+**Languages:** Rust · Go · Python · TypeScript · SQL
 
-`Rust` · `Go` · `Python` · `TypeScript` · `SQL`
+**Systems & Data:** PostgreSQL · RocksDB · Raft · MVCC · REST · gRPC
 
-**Systems & Data**
+**Infrastructure:** Docker · Kubernetes · GitHub Actions · Linux
 
-`PostgreSQL` · `RocksDB` · `Raft` · `MVCC` · `REST` · `gRPC`
+**Reliability & Security:** OIDC · RBAC · SBOM · SLSA-style provenance · fuzzing · observability · cryptographic verification
 
-**Infrastructure**
-
-`Docker` · `Kubernetes` · `GitHub Actions` · `Linux`
-
-**Reliability & Security**
-
-`OIDC` · `RBAC` · `SBOM` · `SLSA-style provenance` · `Fuzzing` · `Observability` · `Cryptographic verification`
-
-**AI / Agent Systems**
-
-`Tool-using agents` · `Agent runtimes` · `Execution verification` · `Policy enforcement` · `Symbolic reasoning`
+**AI / Agent Systems:** tool-using agents · agent runtimes · execution verification · policy enforcement · symbolic reasoning
 
 ---
 
-# Research Identity
+## 🧑‍🔬 Research Identity
 
-**Stamatis-Christos Saridakis**
+**Stamatis-Christos Saridakis**  
+Independent Researcher & Systems Engineer
 
-Independent researcher and systems engineer.
-
-**ORCID**  
-[0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
-
-**Zenodo**  
-[AARC: A Machine-Verifiable Audit and Reliability Contract for Tool-Using AI Agents](https://doi.org/10.5281/zenodo.23107336)
-
-**GitHub**  
-[@SaridakisStamatisChristos](https://github.com/SaridakisStamatisChristos)
+- **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
+- **Zenodo:** [AARC — Machine-Verifiable Audit and Reliability Contract](https://doi.org/10.5281/zenodo.23107336)
+- **GitHub:** [@SaridakisStamatisChristos](https://github.com/SaridakisStamatisChristos)
 
 ---
 
-## Collaboration
+## 🤝 Collaboration
 
-I am interested in technically ambitious work involving:
+I am interested in technically ambitious work involving **reliable autonomous agents, agent infrastructure, distributed systems, database systems, runtime assurance, execution verification, and high-assurance software**.
 
-- reliable autonomous agents
-- agent infrastructure
-- distributed systems
-- database systems
-- runtime assurance
-- execution verification
-- high-assurance software
-- research engineering
-
-Particularly interesting are projects where **correctness, reliability, and evidence matter as much as raw capability**.
+The projects I find most interesting are those where **correctness, reliability, and evidence matter as much as raw capability**.
