@@ -2,6 +2,8 @@
 
 ### Systems Engineer · Independent Researcher
 
+[ORCID](https://orcid.org/0009-0002-1699-2043) · [AARC Preprint](https://doi.org/10.5281/zenodo.23107336) · [AARC Repository](https://github.com/SaridakisStamatisChristos/Agentic-Audit-Reliability-Contract-AARC-)
+
 I build **reliability-focused software for agentic AI, distributed systems, databases, transactional platforms, and verifiable infrastructure**.
 
 My work is organized around one recurring question:
@@ -12,16 +14,17 @@ I explore that problem through runtime assurance, explicit state transitions, in
 
 ---
 
-## 📄 Published Research
+## 📄 Published Preprint
 
 ### AARC — A Machine-Verifiable Audit and Reliability Contract for Tool-Using AI Agents
+
+**Zenodo preprint v1.1.1** · DOI [10.5281/zenodo.23107336](https://doi.org/10.5281/zenodo.23107336)
 
 AARC specifies a machine-verifiable execution contract for tool-using AI agents using **externally observable runtime evidence rather than hidden chain-of-thought**.
 
 It focuses on execution ordering, immutable intent anchors, tool authorization, separated approval identities, state verification, trace integrity, and change provenance.
 
-- **Publication:** [Zenodo — AARC](https://doi.org/10.5281/zenodo.23107336)
-- **DOI:** [10.5281/zenodo.23107336](https://doi.org/10.5281/zenodo.23107336)
+- **Zenodo:** [AARC preprint](https://doi.org/10.5281/zenodo.23107336)
 - **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
 - **Repository:** [Agentic Audit & Reliability Contract](https://github.com/SaridakisStamatisChristos/Agentic-Audit-Reliability-Contract-AARC-)
 
