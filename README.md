@@ -2,7 +2,7 @@
 
 ### Systems Engineer · Independent Researcher
 
-[ORCID](https://orcid.org/0009-0002-1699-2043) · [AARC Preprint](https://doi.org/10.5281/zenodo.23107336) · [AARC Repository](https://github.com/SaridakisStamatisChristos/Agentic-Audit-Reliability-Contract-AARC-)
+[ORCID](https://orcid.org/0009-0002-1699-2043) · [Execution Assurance Preprint](https://doi.org/10.5281/zenodo.23119087) · [AARC Preprint](https://doi.org/10.5281/zenodo.23107336) · [GitHub](https://github.com/SaridakisStamatisChristos)
 
 I build **reliability-focused software for agentic AI, distributed systems, databases, transactional platforms, and verifiable infrastructure**.
 
@@ -14,7 +14,20 @@ I explore that problem through runtime assurance, explicit state transitions, in
 
 ---
 
-## 📄 Published Preprint
+## 📄 Published Research
+
+### Agentic Execution Assurance: Observation-Bounded Certification, Runtime Enforcement, and Tamper-Evident Evidence
+
+**Zenodo preprint v2.1** · DOI [10.5281/zenodo.23119087](https://doi.org/10.5281/zenodo.23119087)
+
+This paper develops a bounded execution-assurance framework for tool-using AI agents by coupling **observation-bounded certification, typed pre-effect enforcement, claim-dependent evidence semantics, and a source-audited reference implementation**.
+
+It formalizes when execution properties can be certified from an observation boundary, scopes runtime safety guarantees to mediated committed effects, distinguishes cryptographic integrity from semantic truth, and evaluates the resulting assurance boundaries against the pinned AegisRun / AEGIS implementation.
+
+- **Preprint:** [10.5281/zenodo.23119087](https://doi.org/10.5281/zenodo.23119087)
+- **Reproducibility artifact:** [10.5281/zenodo.23118665](https://doi.org/10.5281/zenodo.23118665)
+- **Reference implementation:** [AegisRun / AEGIS](https://github.com/SaridakisStamatisChristos/AEGIS)
+- **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
 
 ### AARC — A Machine-Verifiable Audit and Reliability Contract for Tool-Using AI Agents
 
@@ -157,6 +170,8 @@ Deterministic optimization · high-performance computation · data structures ·
 Independent Researcher & Systems Engineer
 
 - **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
+- **Zenodo:** [Agentic Execution Assurance](https://doi.org/10.5281/zenodo.23119087)
+- **Artifact:** [Reproducibility Artifact](https://doi.org/10.5281/zenodo.23118665)
 - **Zenodo:** [AARC — Machine-Verifiable Audit and Reliability Contract](https://doi.org/10.5281/zenodo.23107336)
 - **GitHub:** [@SaridakisStamatisChristos](https://github.com/SaridakisStamatisChristos)
 
