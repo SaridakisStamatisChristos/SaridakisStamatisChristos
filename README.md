@@ -2,7 +2,7 @@
 
 ### Systems Engineer · Independent Researcher
 
-[ORCID](https://orcid.org/0009-0002-1699-2043) · [Execution Assurance Preprint](https://doi.org/10.5281/zenodo.23119087) · [AARC Preprint](https://doi.org/10.5281/zenodo.23107336) · [GitHub](https://github.com/SaridakisStamatisChristos)
+[Research Website](https://saridakisstamatischristos.github.io/) · [ORCID](https://orcid.org/0009-0002-1699-2043) · [Execution Assurance Preprint](https://doi.org/10.5281/zenodo.23119087) · [AARC Preprint](https://doi.org/10.5281/zenodo.23107336) · [GitHub](https://github.com/SaridakisStamatisChristos)
 
 I build **reliability-focused software for agentic AI, distributed systems, databases, transactional platforms, and verifiable infrastructure**.
 
@@ -24,6 +24,7 @@ This paper develops a bounded execution-assurance framework for tool-using AI ag
 
 It formalizes when execution properties can be certified from an observation boundary, scopes runtime safety guarantees to mediated committed effects, distinguishes cryptographic integrity from semantic truth, and evaluates the resulting assurance boundaries against the pinned AegisRun / AEGIS implementation.
 
+- **Publication page:** [saridakisstamatischristos.github.io/publications/agentic-execution-assurance/](https://saridakisstamatischristos.github.io/publications/agentic-execution-assurance/)
 - **Preprint:** [10.5281/zenodo.23119087](https://doi.org/10.5281/zenodo.23119087)
 - **Reproducibility artifact:** [10.5281/zenodo.23118665](https://doi.org/10.5281/zenodo.23118665)
 - **Reference implementation:** [AegisRun / AEGIS](https://github.com/SaridakisStamatisChristos/AEGIS)
@@ -37,6 +38,7 @@ AARC specifies a machine-verifiable execution contract for tool-using AI agents 
 
 It focuses on execution ordering, immutable intent anchors, tool authorization, separated approval identities, state verification, trace integrity, and change provenance.
 
+- **Publication page:** [saridakisstamatischristos.github.io/publications/aarc/](https://saridakisstamatischristos.github.io/publications/aarc/)
 - **Zenodo:** [AARC preprint](https://doi.org/10.5281/zenodo.23107336)
 - **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
 - **Repository:** [Agentic Audit & Reliability Contract](https://github.com/SaridakisStamatisChristos/Agentic-Audit-Reliability-Contract-AARC-)
@@ -169,6 +171,7 @@ Deterministic optimization · high-performance computation · data structures ·
 **Stamatis-Christos Saridakis**  
 Independent Researcher & Systems Engineer
 
+- **Research website:** [saridakisstamatischristos.github.io](https://saridakisstamatischristos.github.io/)
 - **ORCID:** [0009-0002-1699-2043](https://orcid.org/0009-0002-1699-2043)
 - **Zenodo:** [Agentic Execution Assurance](https://doi.org/10.5281/zenodo.23119087)
 - **Artifact:** [Reproducibility Artifact](https://doi.org/10.5281/zenodo.23118665)
